@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <link rel="stylesheet" href="./static/css/bootstrap.css" media="screen" title="no title">
+  </head>
+  <body>
+    <app :msg="msg"></app>
+    <alert type="success" @click="showRight = !showRight">
+      这是一个alert ,成功的alert
+    </alert>
+
+    <alert type="success" @click="changeView">
+      另一个alert ,成功的alert
+    </alert>
+
+    <component :is="currentView" :msg='msg'>change</component>
+    <my-alert msg='sdfsdfsdf'></my-alert>
+
+    <!-- <alert :show.sync="showRight" placement="top-right" duration="3000" type="success" width="400px" dismissable>
+      <span class="icon-ok-circled alert-icon-float-left"></span>
+      <strong>Well Done!</strong>
+      <p>{{message}}</p>
+    </alert> -->
+    <accordion :one-at-atime="checked" type="info">
+      <panel is-open type="primary">
+        <strong slot="header"><u>Panel #1</u></strong>
+        ...
+      </panel>
+      <panel header="Panel #2">
+        ...
+      </panel>
+      <panel header="Panel #3">
+        ...
+      </panel>
+      <panel header="Panel #4">
+        ...
+      </panel>
+    </accordion>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
